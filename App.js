@@ -1,20 +1,40 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import CButton from './Components/CountButton';
 
-export default function App() {
+var caf = require('./img/cafe.png');
+var agu = require('./img/agua.png');
+
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={sty.conteudo}>
+      <Text style={sty.titulo}>Vida de Dev's</Text>
+        <View style={sty.al}>
+        <CButton tit="Café" caf = {caf} />
+        <CButton tit="Água" caf = {agu} />
+        </View>
+      
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
+export default App;
+
+const sty = StyleSheet.create({
+  conteudo: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#FFF8DC',
     alignItems: 'center',
     justifyContent: 'center',
+    
+  },
+  titulo: {
+    fontSize: 50,
+    color: '#8B0000',
+  },
+  al: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });
