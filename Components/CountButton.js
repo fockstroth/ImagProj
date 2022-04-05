@@ -1,23 +1,35 @@
 import React, {useState} from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity} from "react-native"
+import { useEffect } from "react/cjs/react.development";
 
 
-
+var ativador = false;
 export default function CButton(props){
 
     const [c,setc] = useState(0);
-    
-
+    function timeAct(data){
+        useEffect(() => {
+            if(data === '00:00:00'){
+                setc(0);
+                return ;
+            }
+            return ;
+        }, [data]);
+    }
 
     return(
         <View style={{padding:10}}>
+            {timeAct(props.data)}
+
             <TouchableOpacity onPress={ ()=> {setc(c+1)} }>
                 <View style={s.but}>
                     <Image style={s.ic} source={ props.caf }/>
                     <Text style={s.titulo}>{props.tit}</Text> 
+                    <Text style={s.ct}>{c}</Text>
+                    <Text>{props.data}</Text>
                 </View>
             </TouchableOpacity>
-            <Text style={s.ct}>{c}</Text>
+
         </View>
     );
 
@@ -44,6 +56,5 @@ const s = StyleSheet.create({
     ct:{
         fontSize: 80,
         color: '#A0522D',
-        paddingLeft: 55,
     }
 });

@@ -15,8 +15,6 @@ function App() {
       setInterval(() => {
           const date = new Date();
           setRelo(date.toLocaleTimeString());
-          if (date.toLocaleTimeString() == '00:00:00'){
-          }
       }, 1000);
   
   }, []);
@@ -25,10 +23,10 @@ function App() {
     <View style={sty.conteudo}>
       <Text style={sty.titulo}>Vida de Dev's</Text>
         <View style={sty.al}>
-        <CButton tit="Café" caf = {caf} />
-        <CButton tit="Água" caf = {agu} />
+        <CButton tit="Café" caf = {caf} data ={Relo}/>
+        <CButton tit="Água" caf = {agu} data ={Relo}/>
         </View>
-      <Text>{Relo}</Text>
+      <Text style={{paddingTop:150, fontSize:20}}>{Relo}</Text>
     </View>
   );
 }
