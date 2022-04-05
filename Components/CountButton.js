@@ -1,12 +1,14 @@
 import React, {useState} from "react";
-import { View, Text, Image, StyleSheet, TouchableOpacity, Alert } from "react-native"
+import { View, Text, Image, StyleSheet, TouchableOpacity} from "react-native"
+
 
 
 export default function CButton(props){
 
     const [c,setc] = useState(0);
-
     
+
+
     return(
         <View style={{padding:10}}>
             <TouchableOpacity onPress={ ()=> {setc(c+1)} }>
