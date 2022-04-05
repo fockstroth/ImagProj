@@ -26,7 +26,6 @@ export default function CButton(props){
                     <Image style={s.ic} source={ props.caf }/>
                     <Text style={s.titulo}>{props.tit}</Text> 
                     <Text style={s.ct}>{c}</Text>
-                    <Text>{props.data}</Text>
                 </View>
             </TouchableOpacity>
 
